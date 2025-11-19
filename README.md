@@ -1,16 +1,28 @@
 # React + Vite
+Todo App
+A simple and intuitive Todo application built with React and Vite, allowing users to create, manage, and organize their daily tasks. This project demonstrates a modern front-end setup with fast development and hot module replacement via Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack
+Frontend: React
+Build Tool / Dev Server: Vite
+Package Manager: npm
 
-Currently, two official plugins are available:
+Installation Instructions
+Follow these steps to set up the project locally:
+1. Clone the Repository
+git clone <your-repo-url>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Navigate Into the Project Directory
+cd todo-app
 
-## React Compiler
+3. Install Dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Running the Development Server
+Start the development server with:
+npm run dev
 
-## Expanding the ESLint configuration
+The app will typically run at http://localhost:5173/. Open it in your browser to see the app in action.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
