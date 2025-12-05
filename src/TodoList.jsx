@@ -8,15 +8,11 @@ function TodoList() {
   ];
 
   return (
-    <div>
-      <h1>My Todos</h1>
-      <TodoForm />
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
   );
 }
 export default TodoList;
