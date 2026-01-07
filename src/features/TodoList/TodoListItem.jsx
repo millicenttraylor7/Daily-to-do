@@ -5,24 +5,36 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
   const [isEditing, setIsEditing] = useState(false);
   const [workingTitle, setWorkingTitle] = useState(todo.title);
 
-  // Update workingTitle on input change
-  const handleEdit = (event) => {
+  // Handle input changes
+  function handleEdit(event) {
     setWorkingTitle(event.target.value);
-  };
+  }
 
   // Cancel editing
-  const handleCancel = () => {
+  function handleCancel() {
     setWorkingTitle(todo.title);
     setIsEditing(false);
-  };
+  }
 
-  // Update todo title
-  const handleUpdate = (event) => {
-    if (!isEditing) return;
+  // Handle updating the todo
+  function handleUpdate(event) {
+    // if isEditing is false, exit the function
+    if (!isEditing) {
+      return;
+    }
+
+    // prevent default form behavior
     event.preventDefault();
-    onUpdateTodo({ ...todo, title: workingTitle });
+
+    // call onUpdateTodo with updated todo object
+    onUpdateTodo({
+      ...todo,
+      title: workingTitle,
+    });
+
+    // exit editing mode
     setIsEditing(false);
-  };
+  }
 
   return (
     <li>
@@ -34,9 +46,11 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
             elementId={`todo${todo.id}`}
             labelText="Todo"
           />
+
           <button type="button" onClick={handleCancel}>
             Cancel
           </button>
+
           <button type="button" onClick={handleUpdate}>
             Update
           </button>
@@ -51,6 +65,7 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
               onChange={() => onCompleteTodo(todo.id)}
             />
           </label>
+
           <span onClick={() => setIsEditing(true)}>{todo.title}</span>
         </form>
       )}

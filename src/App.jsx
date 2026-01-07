@@ -12,20 +12,29 @@ function App() {
       title,
       isCompleted: false,
     };
+
     setTodoList([...todoList, newTodo]);
   }
 
   function completeTodo(id) {
-    const updatedTodoList = todoList.map((todo) =>
-      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
-    );
+    const updatedTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isCompleted: !todo.isCompleted };
+      }
+      return todo;
+    });
+
     setTodoList(updatedTodoList);
   }
 
   function updateTodo(editedTodo) {
-    const updatedTodos = todoList.map((todo) =>
-      todo.id === editedTodo.id ? { ...editedTodo } : todo
-    );
+    const updatedTodos = todoList.map((todo) => {
+      if (todo.id === editedTodo.id) {
+        return { ...editedTodo };
+      }
+      return todo;
+    });
+
     setTodoList(updatedTodos);
   }
 
@@ -36,7 +45,7 @@ function App() {
       <TodoList
         todoList={todoList}
         onCompleteTodo={completeTodo}
-        onUpdateTodo={updateTodo} // pass the new handler
+        onUpdateTodo={updateTodo} /* NEW PROP */
       />
     </div>
   );
