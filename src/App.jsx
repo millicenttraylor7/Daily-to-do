@@ -3,6 +3,7 @@ import TodoList from './features/TodoList/TodoList';
 import TodoForm from './features/TodoForm';
 import TodosViewForm from './features/TodosViewForm';
 import './App.css';
+import styles from './App.module.css';
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -182,36 +183,39 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className={styles.appWrapper}>
+      <div className={styles.appContainer}>
+        <h1>Todo List</h1>
 
-      {isLoading && <p>Loading...</p>}
+        {isLoading && <p>Loading...</p>}
 
-      <TodoForm onAddTodo={addTodo} isSaving={isSaving} />
+        <TodoForm onAddTodo={addTodo} isSaving={isSaving} />
 
-      <TodoList
-        todoList={todoList}
-        isLoading={isLoading}
-        onCompleteTodo={completeTodo}
-        onUpdateTodo={updateTodo}
-      />
+        <TodoList
+          todoList={todoList}
+          isLoading={isLoading}
+          onCompleteTodo={completeTodo}
+          onUpdateTodo={updateTodo}
+        />
 
-      <TodosViewForm
-        sortField={sortField}
-        setSortField={setSortField}
-        sortDirection={sortDirection}
-        setSortDirection={setSortDirection}
-        queryString={queryString}
-        setQueryString={setQueryString}
-      />
-
-      {errorMessage && (
-        <div>
-          <hr />
-          <p>{errorMessage}</p>
-          <button onClick={() => setErrorMessage('')}>Dismiss</button>
-        </div>
-      )}
+        <TodosViewForm
+          sortField={sortField}
+          setSortField={setSortField}
+          sortDirection={sortDirection}
+          setSortDirection={setSortDirection}
+          queryString={queryString}
+          setQueryString={setQueryString}
+        />
+      </div>
+      <div>
+        {errorMessage && (
+          <div>
+            <hr />
+            <p>{errorMessage}</p>
+            <button onClick={() => setErrorMessage('')}>Dismiss</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

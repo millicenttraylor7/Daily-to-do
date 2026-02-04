@@ -1,0 +1,27 @@
+/* Center the entire app in the viewport */
+.appWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f8fafc;
+}
+
+/* The main app container */
+.appContainer {
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Error message container */
+.errorBox {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 2px solid #ef4444;
+  border-radius: 6px;
+  background-color: #fef2f2;
+}
