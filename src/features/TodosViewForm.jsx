@@ -47,9 +47,7 @@ function TodosViewForm({
       setQueryString(localQueryString);
     }, 500);
 
-    return () => {
-      clearTimeout(debounce);
-    };
+    return () => clearTimeout(debounce);
   }, [localQueryString, setQueryString]);
 
   return (
@@ -71,8 +69,8 @@ function TodosViewForm({
         <label htmlFor="sortField">Sort by</label>
         <StyledSelect
           id="sortField"
-          onChange={(e) => setSortField(e.target.value)}
           value={sortField}
+          onChange={(e) => setSortField(e.target.value)}
         >
           <option value="title">Title</option>
           <option value="createdTime">Time added</option>
