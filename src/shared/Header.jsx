@@ -1,0 +1,34 @@
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.css';
+
+function Header({ title }) {
+  return (
+    <header className={styles.headerWrapper}>
+      {/* Centered title */}
+      <h1 className={styles.title}>{title}</h1>
+
+      {/* Nav links in upper-right corner */}
+      <nav className={styles.nav}>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.inactive
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.inactive
+          }
+        >
+          About
+        </NavLink>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;

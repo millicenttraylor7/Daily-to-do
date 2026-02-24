@@ -1,0 +1,36 @@
+/* Header wrapper */
+.headerWrapper {
+  position: relative; /* so nav can be positioned absolute */
+  text-align: center; /* center the h1 title */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Title styling */
+.title {
+  margin: 0;
+  font-size: 2rem;
+  color: black; /* primary text color */
+}
+
+/* Nav container */
+.nav {
+  position: absolute;
+  top: 1rem; /* aligns nav to top */
+  right: 2rem; /* aligns nav to right */
+  display: flex; /* side-by-side links */
+  gap: 1rem; /* spacing between links */
+}
+
+/* Active link (subdued color) */
+.active {
+  color: gray; /* subdued relative to black */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Inactive link (primary color) */
+.inactive {
+  color: black; /* primary text color */
+  text-decoration: none;
+}

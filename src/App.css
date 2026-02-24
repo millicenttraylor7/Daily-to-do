@@ -138,3 +138,35 @@ hr {
   margin-top: 0.75rem;
   background-color: var(--danger);
 }
+
+/* =====================
+   Pagination Controls
+===================== */
+.paginationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+.paginationControls button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.paginationControls button:hover:enabled {
+  background-color: var(--primary-hover);
+}
+
+.paginationControls button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
