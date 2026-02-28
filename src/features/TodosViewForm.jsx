@@ -54,15 +54,15 @@ function TodosViewForm({
     <StyledForm onSubmit={preventRefresh}>
       <StyledFormGroup>
         <label htmlFor="searchTodos">Search todos:</label>
-        <StyledInput
+        <Input
           id="searchTodos"
           type="text"
           value={localQueryString}
           onChange={(e) => setLocalQueryString(e.target.value)}
         />
-        <StyledButton type="button" onClick={() => setLocalQueryString('')}>
+        <Button type="button" onClick={() => setLocalQueryString('')}>
           Clear
-        </StyledButton>
+        </Button>
       </StyledFormGroup>
 
       <StyledFormGroup>
